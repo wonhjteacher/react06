@@ -9,8 +9,10 @@ const Card = ({card})  => {
     {color:'#fff',fontWeight:700,backgroundColor:'#8f8'}
 ]
    const [fav,setFav]  = useState(0);
+   const [checkState, setCheckState]= useState('')
    const fncFav = (e) => {
     setFav((fav === 0) ? 1 : 0) ; 
+    setCheckState(e.target.checked)
    }
 
     return (
@@ -21,6 +23,13 @@ const Card = ({card})  => {
            <dd>{card.content}</dd>
         </dl>
         <div className='btns'>
+           <input type='checkbox' 
+           id={card.checkName} 
+           name={card.checkName} 
+           data-checked={checkState}
+           onChange={fncFav}
+           className="blind" 
+            />
            <label 
            htmlFor={card.checkName} 
            style={btnColor[fav]}>
