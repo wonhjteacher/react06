@@ -6,6 +6,7 @@ import Footer from './components/Footer';
 import CardList from './components/CardList';
 import Notice from './components/Notice';
 import Event from './components/Event';
+import EventToggle from './components/EventToggle';
 import {Manual ,Rule, Policy, EtcInfo}  from './pages/FooterMenu'
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
             <Route path='/policy' element={<Policy />} />
             <Route path='/etcInfo' element={<EtcInfo />} />
             <Route path='/event' element={<Event />} />
+            <Route path='/eventToggle' element={<EventToggle />} />
           </Routes>
         <Footer title={title} />
       </BrowserRouter>
