@@ -1,12 +1,14 @@
 import React from 'react';
 import EventStyle from './../style/event.module.css';
-import {Link} from 'react-router-dom';
 import { useEffect ,useState } from 'react';
 import EventItem from './EventItem';
+import {MdExpandMore} from 'react-icons/md';
 
 const Event = () => {
      //data 불러오기 
+     const listPlusNum=2;
      const [dataList,setDataList] = useState([]);
+     const [moreNum,setMoreNum] =useState(listPlusNum)
      const dataUrl = './data/eventData.json';
      useEffect(()=>{
         (async () => {
@@ -16,9 +18,10 @@ const Event = () => {
         })()
      },[])
      
-
-     const viewData = dataList.filter((data,index)=>index<5)
-     console.log(viewData)
+     const fncMore= () => {
+        setMoreNum(moreNum+listPlusNum)
+     }
+    const viewData = dataList.filter((data,index)=>index<moreNum)
     return (
         <div className={EventStyle.event}>
             <h2>Event</h2>
@@ -32,6 +35,11 @@ const Event = () => {
                 }
                 
             </ul>
+            <div className={EventStyle.moreBtn}>
+                <button type='button' onClick={fncMore}>
+                    <MdExpandMore />
+                </button>
+            </div>
         </div>
     );
 };
