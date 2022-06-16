@@ -5,6 +5,7 @@ import Main from './components/Main';
 import Footer from './components/Footer';
 import CardList from './components/CardList';
 import Notice from './components/Notice';
+import Event from './components/Event';
 import {Manual ,Rule, Policy, EtcInfo}  from './pages/FooterMenu'
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
             <Route path='/rule' element={<Rule />} />
             <Route path='/policy' element={<Policy />} />
             <Route path='/etcInfo' element={<EtcInfo />} />
+            <Route path='/event' element={<Event />} />
           </Routes>
         <Footer title={title} />
       </BrowserRouter>
