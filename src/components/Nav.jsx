@@ -1,11 +1,11 @@
 import React from 'react';
+import {Link,NavLink} from 'react-router-dom';
 
 const Nav = () => {
     const navList=[
-        {content:'Main',href:''},
-        {content:'Review',href:'Review'},
-        {content:'CardList',href:'CardList'},
-        {content:'Notice',href:'Notice'},
+        {content:'Main',href:'/'},
+        {content:'CardList',href:'cardList'},
+        {content:'Notice',href:'notice'},
     ]
     return (
         <div id='nav'>
@@ -14,7 +14,7 @@ const Nav = () => {
               {
                 navList.map((element,index)=>{
                     return(
-                        <li key={index}>{element.content}</li>
+                        <li key={index}><NavLink to={element.href} className={({isActive})=>isActive?'navList on':'navList'}>{element.content}</NavLink></li>
                     )
                })
               }

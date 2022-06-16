@@ -34,3 +34,13 @@ h1{
     font-weight: 700;
 }
 #nav ul li:last-child{border-right:none;}
+
+#nav ul li .navList.active{
+    font-weight: bold;
+    color:#000;
+}
+
+#nav ul li .navList.on{
+    font-weight: bold;
+    color:rgb(253, 245, 137);
+}
