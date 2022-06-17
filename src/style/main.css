@@ -23,13 +23,13 @@
 }
 .mainContainer .viewContents ul{
     width: 500%;height: 100%;
-    display: flex;
+    display: flex;height:100%;
     justify-content:flex-start;
     flex-wrap: nowrap;
 
 }
 .mainContainer .viewContents li{
-    flex-shrink: 1;
+    flex-shrink: 0;
     width:var(--list-size);
     height: 500px;
     font-size: 4rem;
@@ -47,4 +47,9 @@
 @keyframes firstSlide{
     0%{margin-left: 100%;transition: none}
     100%{margin-left:0;transition:margin 500ms ease}
+}
+
+@keyframes lastSlide {
+    0%{margin-left:0%;transition:margin 500ms ease}
+    100%{margin-left:100%;}
 }

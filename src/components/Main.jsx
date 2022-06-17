@@ -37,21 +37,20 @@ const Main = () => {
         setSlideStyle({
             ...initialStyle,
             transition:(num!==0) ? 'margin 500ms ease':'none',
-            animation:(num===0)?'firstSlide 500ms ease 1' : 'none'
+            animation:(num===0)? 'firstSlide 500ms ease 1' : 'none' 
         }) 
     }
 
     const fncPrevSlide = () => {
         setNum(num<=0?3:num-1);
         checkRef.current = 'prev' ;
-
     }
 
     const  fncNextSlide  = () => {
         setNum(num>=3?0:num+1);
-        checkRef.current = 'next' ;
-       
+        checkRef.current = 'next' ;     
     }
+
  //  넥스트 버튼을클릭하면  fncNextSlid 호출 
  //  num => +1   check=next 
  // useEffect 을 사용해서 num 변화를 감지해서, 체크상태 감지 next 가 들어가 있으면 
@@ -74,7 +73,7 @@ const Main = () => {
                     {
                         listData.map((list,index)=>{
                             return(
-                                <li className={fncClassAdd(index)}>{list}</li>
+                                <li className={fncClassAdd(index)} key={index}>{list}</li>
                             )
                         })
                     }
