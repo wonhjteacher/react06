@@ -1,4 +1,5 @@
 import React from 'react';
+import './../style/container.css'
 import {MdFavorite} from "react-icons/md";
 import { useState } from 'react';
 

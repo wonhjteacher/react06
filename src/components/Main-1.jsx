@@ -4,23 +4,14 @@ import { useState } from 'react';
 
 const Main = () => {
     const listData=['content01','content02','content03','content04'];   
-    //listData.unshift('more1')
-    listData.unshift(listData[listData.length-1])
     const [num,setNum] = useState(0);
     const fncClassAdd = (i) =>{
-        const on=(i===num)?' on':' on' ; 
+        const on=(i===num)?' on':'' ; 
         const view='view_';
         const textNum="00000"+(i+1);
         const viewText=view+textNum.slice(-2); 
         console.log(viewText)
         return viewText+on
-    }
-    const setStyle = {
-        position:`relative`,
-        left:'-100%',
-        marginLeft:`${num * -100}%`,
-        transition:(num!==0) ? 'margin 500ms ease':'none',
-        animation:(num===0)?'firstSlide 500ms ease 1' : 'none'
     }
 
     return (
@@ -33,7 +24,7 @@ const Main = () => {
                 </div>
             </div>
             <div className='viewContents'>
-                <ul style={setStyle}>
+                <ul>
                     {
                         listData.map((list,index)=>{
                             return(
